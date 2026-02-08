@@ -1,12 +1,12 @@
 import express from 'express';
 import cors from 'cors';
-import "./db/db.js";
+import "./db/db.js"; // Asegura que la conexión a la base de datos se establezca al iniciar el servidor
 import userRoutes from './routes/users.js';
 
 const app = express();
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json()); // Middleware para parsear JSON en las solicitudes entrantes
+app.use(express.urlencoded({ extended: true })); // Middleware para parsear datos de formularios (application/x-www-form-urlencoded)
 
 app.use(cors());
 app.use("/api/users", userRoutes);
