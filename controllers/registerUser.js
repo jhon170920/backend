@@ -1,5 +1,5 @@
-import bcrypt from "bcrypt";
-import Users from "../models/users";
+import bcrypt from "bcrypt"; // Importar bcrypt para hashear la contraseña
+import Users from "../models/users.js"; // Importar el modelo de usuario (no olvidar al importar el archivo su extensión .js)
 
 export const registerUser = async (req, res) => {
     try {
@@ -33,4 +33,4 @@ export const registerUser = async (req, res) => {
     } catch (error) {
         res.status(500).json({message:"Error al crear el usuario", error: error.message});
     }
-}
+};
